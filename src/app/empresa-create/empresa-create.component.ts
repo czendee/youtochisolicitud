@@ -3,13 +3,13 @@ import { Router } from '@angular/router';
 import { RestApiService } from "../shared/rest-api.service";
 
 @Component({
-  selector: 'app-employee-create',
-  templateUrl: './employee-create.component.html',
-  styleUrls: ['./employee-create.component.css']
+  selector: 'app-empresa-create',
+  templateUrl: './empresa-create.component.html',
+  styleUrls: ['./empresa-create.component.css']
 })
-export class EmployeeCreateComponent implements OnInit {
+export class EmpresaCreateComponent implements OnInit {
 
-  @Input() employeeDetails = { name: '', email: '', phone: 0 }
+  @Input() empresaDetails = { name: '', email: '', phone: 0 }
 
   constructor(
     public restApi: RestApiService, 
@@ -18,9 +18,9 @@ export class EmployeeCreateComponent implements OnInit {
 
   ngOnInit() { }
 
-  addEmployee(dataEmployee) {
-    this.restApi.createEmployee(this.employeeDetails).subscribe((data: {}) => {
-      this.router.navigate(['/employees-list'])
+  addEmpresa(dataEmpresa) {
+    this.restApi.createEmpresa(this.empresaDetails).subscribe((data: {}) => {
+      this.router.navigate(['/empresa-list'])
     })
   }
 
