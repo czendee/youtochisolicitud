@@ -27,7 +27,7 @@ export class RestApiService {
   }  
 
   // HttpClient API get() method => Fetch empresas list
-  getEmpresa(): Observable<Empresa> {
+  getEmpresas(): Observable<Empresa> {
     return this.http.get<Empresa>(this.apiURL + '/empresas')
     .pipe(
       retry(1),
