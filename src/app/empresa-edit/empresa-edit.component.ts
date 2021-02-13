@@ -3,14 +3,14 @@ import { RestApiService } from "../shared/rest-api.service";
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-employee-details',
-  templateUrl: './employee-edit.component.html',
-  styleUrls: ['./employee-edit.component.css']
+  selector: 'app-empresa-details',
+  templateUrl: './empresa-edit.component.html',
+  styleUrls: ['./empresa-edit.component.css']
 })
 
-export class EmployeeEditComponent implements OnInit {
+export class EmpresaEditComponent implements OnInit {
   id = this.actRoute.snapshot.params['id'];
-  employeeData: any = {};
+  empresaData: any = {};
 
   constructor(
     public restApi: RestApiService,
@@ -20,16 +20,16 @@ export class EmployeeEditComponent implements OnInit {
   }
 
   ngOnInit() { 
-    this.restApi.getEmployee(this.id).subscribe((data: {}) => {
-      this.employeeData = data;
+    this.restApi.getEmpresa(this.id).subscribe((data: {}) => {
+      this.empresaData = data;
     })
   }
 
-  // Update employee data
-  updateEmployee() {
-    if(window.confirm('Are you sure, you want to update?')){
-      this.restApi.updateEmployee(this.id, this.employeeData).subscribe(data => {
-        this.router.navigate(['/employees-list'])
+  // Update empresa data
+  updateEmpresa() {
+    if(window.confirm('Confirmar la modificacion de los datos?')){
+      this.restApi.updateEmpresa(this.id, this.empresaData).subscribe(data => {
+        this.router.navigate(['/empresas-list'])
       })
     }
   }
