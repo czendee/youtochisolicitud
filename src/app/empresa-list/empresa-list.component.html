@@ -1,20 +1,20 @@
 <div class="container custom-container-2">
 
-  <!-- Show it when there is no employee -->
-  <div class="no-data text-center" *ngIf="Employee.length == 0">
-    <p>There is no employee added yet!</p>
-    <button class="btn btn-outline-primary" routerLink="/create-employee">Add Empoyee</button>
+  <!-- Show it when there is no empresa -->
+  <div class="no-data text-center" *ngIf="Empresa.length == 0">
+    <p>Aun no hay ninguna no empresa activa!</p>
+    <button class="btn btn-outline-primary" routerLink="/create-empresa">Agregar Nueva Empresa</button>
   </div>
 
-  <!-- Employees list table, it hides when there is no employee -->
-  <div *ngIf="Employee.length !== 0">
-    <h3 class="mb-3 text-center">Employees List</h3>
+  <!-- Empresa list table, it hides when there is no empresa -->
+  <div *ngIf="Empresa.length !== 0">
+    <h3 class="mb-3 text-center">Lista de Empresas</h3>
 
     <div class="col-md-12">
       <table class="table table-bordered">
         <thead>
           <tr>
-            <th scope="col">User Id</th>
+            <th scope="col">Empresa Id</th>
             <th scope="col">Name</th>
             <th scope="col">Email</th>
             <th scope="col">Phone</th>
@@ -22,14 +22,14 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let employee of Employee">
-            <td>{{employee.id}}</td>
-            <td>{{employee.name}}</td>
-            <td>{{employee.email}}</td>
-            <td>{{employee.phone}}</td>
+          <tr *ngFor="let empresa of Empresa">
+            <td>{{empresa.id}}</td>
+            <td>{{empresa.name}}</td>
+            <td>{{empresa.email}}</td>
+            <td>{{empresa.phone}}</td>
             <td>
-              <span class="edit" routerLink="/employee-edit/{{employee.id}}">Edit</span>
-              <span class="delete" (click)="deleteEmployee(employee.id)">Delete</span>
+              <span class="edit" routerLink="/empresa-edit/{{empresa.id}}">Edit</span>
+              <span class="delete" (click)="deleteEmployee(empresa.id)">Delete</span>
             </td>
           </tr>
         </tbody>
