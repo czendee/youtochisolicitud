@@ -7,7 +7,7 @@ import { EmpresaListComponent } from './empresa-list/empresa-list.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'create-empresa' },
   { path: 'create-empresa', component: EmpresaCreateComponent },
-  { path: 'empresa-list', component: EmpresaListComponent },
+  { path: 'empresas-list', component: EmpresaListComponent },
   { path: 'empresa-edit/:id', component: EmpresaEditComponent }  
 ];
 
