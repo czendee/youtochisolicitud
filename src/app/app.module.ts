@@ -12,16 +12,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 
 // Components
-import { EmployeeCreateComponent } from './employee-create/employee-create.component';
-import { EmployeeEditComponent } from './employee-edit/employee-edit.component';
-import { EmployeesListComponent } from './employees-list/employees-list.component';
+import { EmpresaCreateComponent } from './empresa-create/empresa-create.component';
+import { EmpresaEditComponent } from './empresa-edit/empresa-edit.component';
+import { EmpresaListComponent } from './empresa-list/empresa-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EmployeeCreateComponent,
-    EmployeeEditComponent,
-    EmployeesListComponent
+    EmpresaCreateComponent,
+    EmpresaEditComponent,
+    EmpresaListComponent
   ],
   imports: [
     BrowserModule,
