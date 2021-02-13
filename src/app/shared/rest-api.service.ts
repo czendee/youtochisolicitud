@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Employee } from '../shared/employee';
+import { Empresa } from '../shared/empresa';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 
@@ -26,45 +26,45 @@ export class RestApiService {
     })
   }  
 
-  // HttpClient API get() method => Fetch employees list
-  getEmployees(): Observable<Employee> {
-    return this.http.get<Employee>(this.apiURL + '/employees')
+  // HttpClient API get() method => Fetch empresas list
+  getEmpresa(): Observable<Empresa> {
+    return this.http.get<Empresa>(this.apiURL + '/empresas')
     .pipe(
       retry(1),
       catchError(this.handleError)
     )
   }
 
-  // HttpClient API get() method => Fetch employee
-  getEmployee(id): Observable<Employee> {
-    return this.http.get<Employee>(this.apiURL + '/employees/' + id)
+  // HttpClient API get() method => Fetch empresa
+  getEmpresa(id): Observable<Empresa> {
+    return this.http.get<Empresa>(this.apiURL + '/empresas/' + id)
     .pipe(
       retry(1),
       catchError(this.handleError)
     )
   }  
 
-  // HttpClient API post() method => Create employee
-  createEmployee(employee): Observable<Employee> {
-    return this.http.post<Employee>(this.apiURL + '/employees', JSON.stringify(employee), this.httpOptions)
+  // HttpClient API post() method => Create empresa
+  createEmpresa(empresa): Observable<Empresa> {
+    return this.http.post<Empresa>(this.apiURL + '/empresas', JSON.stringify(empresa), this.httpOptions)
     .pipe(
       retry(1),
       catchError(this.handleError)
     )
   }  
 
-  // HttpClient API put() method => Update employee
-  updateEmployee(id, employee): Observable<Employee> {
-    return this.http.put<Employee>(this.apiURL + '/employees/' + id, JSON.stringify(employee), this.httpOptions)
+  // HttpClient API put() method => Update empresa
+  updateEmpresa(id, empresa): Observable<Empresa> {
+    return this.http.put<Empresa>(this.apiURL + '/empresa/' + id, JSON.stringify(empresa), this.httpOptions)
     .pipe(
       retry(1),
       catchError(this.handleError)
     )
   }
 
-  // HttpClient API delete() method => Delete employee
-  deleteEmployee(id){
-    return this.http.delete<Employee>(this.apiURL + '/employees/' + id, this.httpOptions)
+  // HttpClient API delete() method => Delete empresa
+  deleteEmpresa(id){
+    return this.http.delete<Empresa>(this.apiURL + '/empresas/' + id, this.httpOptions)
     .pipe(
       retry(1),
       catchError(this.handleError)
