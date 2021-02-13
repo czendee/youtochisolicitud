@@ -14,14 +14,14 @@ import { FormsModule } from '@angular/forms';
 // Components
 import { EmpresaCreateComponent } from './empresa-create/empresa-create.component';
 import { EmpresaEditComponent } from './empresa-edit/empresa-edit.component';
-import { EmpresaListComponent } from './empresa-list/empresa-list.component';
+import { EmpresasListComponent } from './empresas-list/empresas-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmpresaCreateComponent,
     EmpresaEditComponent,
-    EmpresaListComponent
+    EmpresasListComponent
   ],
   imports: [
     BrowserModule,
