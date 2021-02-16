@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { EmpresaCreateComponent } from './empresa-create/empresa-create.component';
-import { EmpresaEditComponent } from './empresa-edit/empresa-edit.component';
-import { EmpresasListComponent } from './empresas-list/empresas-list.component';
+import { ServicioCreateComponent } from './servicio-create/servicio-create.component';
+import { ServicioEditComponent } from './servicio-edit/servicio-edit.component';
+import { ServiciosListComponent } from './servicios-list/servicios-list.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'create-empresa' },
-  { path: 'create-empresa', component: EmpresaCreateComponent },
-  { path: 'empresas-list', component: EmpresasListComponent },
-  { path: 'empresa-edit/:id', component: EmpresaEditComponent }  
+  { path: '', pathMatch: 'full', redirectTo: 'create-servicio' },
+  { path: 'create-servicio', component: ServicioCreateComponent },
+  { path: 'servicios-list', component: ServiciosListComponent },
+  { path: 'servicio-edit/:id', component: ServicioEditComponent }  
 ];
 
 @NgModule({
