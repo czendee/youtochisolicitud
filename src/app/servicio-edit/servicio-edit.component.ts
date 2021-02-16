@@ -3,14 +3,14 @@ import { RestApiService } from "../shared/rest-api.service";
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-empresa-details',
-  templateUrl: './empresa-edit.component.html',
-  styleUrls: ['./empresa-edit.component.css']
+  selector: 'app-servicio-details',
+  templateUrl: './servicio-edit.component.html',
+  styleUrls: ['./servicio-edit.component.css']
 })
 
-export class EmpresaEditComponent implements OnInit {
+export class ServicioEditComponent implements OnInit {
   id = this.actRoute.snapshot.params['id'];
-  empresaData: any = {};
+  servicioData: any = {};
 
   constructor(
     public restApi: RestApiService,
@@ -20,16 +20,16 @@ export class EmpresaEditComponent implements OnInit {
   }
 
   ngOnInit() { 
-    this.restApi.getEmpresa(this.id).subscribe((data: {}) => {
-      this.empresaData = data;
+    this.restApi.getServicioa(this.id).subscribe((data: {}) => {
+      this.servicioData = data;
     })
   }
 
-  // Update empresa data
-  updateEmpresa() {
+  // Updates servicio data
+  updateServicio() {
     if(window.confirm('Confirmar la modificacion de los datos?')){
-      this.restApi.updateEmpresa(this.id, this.empresaData).subscribe(data => {
-        this.router.navigate(['/empresas-list'])
+      this.restApi.updateServicio(this.id, this.servicioData).subscribe(data => {
+        this.router.navigate(['/servicios-list'])
       })
     }
   }
