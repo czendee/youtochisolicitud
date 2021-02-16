@@ -2,34 +2,34 @@ import { Component, OnInit } from '@angular/core';
 import { RestApiService } from "../shared/rest-api.service";
 
 @Component({
-  selector: 'app-empresas-list',
-  templateUrl: './empresas-list.component.html',
-  styleUrls: ['./empresas-list.component.css']
+  selector: 'app-servicios-list',
+  templateUrl: './servicios-list.component.html',
+  styleUrls: ['./servicios-list.component.css']
 })
-export class EmpresasListComponent implements OnInit {
+export class ServiciosListComponent implements OnInit {
 
-  Empresa: any = [];
+  Servicio: any = [];
 
   constructor(
     public restApi: RestApiService
   ) { }
 
   ngOnInit() {
-    this.loadEmpresas()
+    this.loadServicios()
   }
 
-  // Get empresas list
-  loadEmpresas() {
-    return this.restApi.getEmpresas().subscribe((data: {}) => {
-      this.Empresa = data;
+  // Get servicios list
+  loadServicios() {
+    return this.restApi.getServicios().subscribe((data: {}) => {
+      this.Servicio = data;
     })
   }
 
-  // Delete empresa
-  deleteEmpresa(id) {
+  // Delete servicio
+  deleteServicio(id) {
     if (window.confirm('Are you sure, you want to delete?')){
-      this.restApi.deleteEmpresa(id).subscribe(data => {
-        this.loadEmpresas()
+      this.restApi.deleteServicio(id).subscribe(data => {
+        this.loadServicios()
       })
     }
   }  
