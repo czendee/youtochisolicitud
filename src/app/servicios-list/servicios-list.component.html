@@ -1,20 +1,20 @@
 <div class="container custom-container-2">
 
-  <!-- Show it when there is no empresa -->
-  <div class="no-data text-center" *ngIf="Empresa.length == 0">
-    <p>Aun no hay ninguna no empresa activa!</p>
-    <button class="btn btn-outline-primary" routerLink="/create-empresa">Agregar Nueva Empresa</button>
+  <!-- Show it when there is no servicio -->
+  <div class="no-data text-center" *ngIf="Servicio.length == 0">
+    <p>Aun no hay ningun servicio activo!</p>
+    <button class="btn btn-outline-primary" routerLink="/create-servicio">Agregar Nuevo Servicio</button>
   </div>
 
-  <!-- Empresa list table, it hides when there is no empresa -->
-  <div *ngIf="Empresa.length !== 0">
-    <h3 class="mb-3 text-center">Lista de Empresas</h3>
+  <!-- Servicio list table, it hides when there is no servicio -->
+  <div *ngIf="Servicio.length !== 0">
+    <h3 class="mb-3 text-center">Lista de Servicios</h3>
 
     <div class="col-md-12">
       <table class="table table-bordered">
         <thead>
           <tr>
-            <th scope="col">Empresa Id</th>
+            <th scope="col">Servicio Id</th>
             <th scope="col">Name</th>
             <th scope="col">Email</th>
             <th scope="col">Phone</th>
@@ -22,14 +22,14 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let empresa of Empresa">
-            <td>{{empresa.id}}</td>
-            <td>{{empresa.name}}</td>
-            <td>{{empresa.email}}</td>
-            <td>{{empresa.phone}}</td>
+          <tr *ngFor="let servicio of Servicio">
+            <td>{{servicio.id}}</td>
+            <td>{{servicio.name}}</td>
+            <td>{{servicio.email}}</td>
+            <td>{{servicio.phone}}</td>
             <td>
-              <span class="edit" routerLink="/empresa-edit/{{empresa.id}}">Edit</span>
-              <span class="delete" (click)="deleteEmployee(empresa.id)">Delete</span>
+              <span class="edit" routerLink="/servicio-edit/{{servicio.id}}">Edit</span>
+              <span class="delete" (click)="deleteServicio(servicio.id)">Delete</span>
             </td>
           </tr>
         </tbody>
