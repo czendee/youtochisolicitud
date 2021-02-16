@@ -1,4 +1,4 @@
-export class Empresa {
+export class Servicio {
    id: number;
    name: string;
    email: string;
