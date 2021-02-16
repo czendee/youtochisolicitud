@@ -20,7 +20,7 @@ export class ServicioEditComponent implements OnInit {
   }
 
   ngOnInit() { 
-    this.restApi.getServicioa(this.id).subscribe((data: {}) => {
+    this.restApi.getServicio(this.id).subscribe((data: {}) => {
       this.servicioData = data;
     })
   }
