@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Empresa } from '../shared/empresa';
+import { Servicio } from '../shared/servicio';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 
@@ -26,45 +26,45 @@ export class RestApiService {
     })
   }  
 
-  // HttpClient API get() method => Fetch empresas list
-  getEmpresas(): Observable<Empresa> {
-    return this.http.get<Empresa>(this.apiURL + '/empresas')
+  // HttpClient API get() method => Fetch servicios list
+  getServicios(): Observable<Servicio> {
+    return this.http.get<Servicio>(this.apiURL + '/servicios')
     .pipe(
       retry(1),
       catchError(this.handleError)
     )
   }
 
-  // HttpClient API get() method => Fetch empresa
-  getEmpresa(id): Observable<Empresa> {
-    return this.http.get<Empresa>(this.apiURL + '/empresas/' + id)
+  // HttpClient API get() method => Fetch servicio
+  getServicio(id): Observable<Servicio> {
+    return this.http.get<Servicio>(this.apiURL + '/servicios/' + id)
     .pipe(
       retry(1),
       catchError(this.handleError)
     )
   }  
 
-  // HttpClient API post() method => Create empresa
-  createEmpresa(empresa): Observable<Empresa> {
-    return this.http.post<Empresa>(this.apiURL + '/empresas', JSON.stringify(empresa), this.httpOptions)
+  // HttpClient API post() method => Create servicio
+  createServicio(servicio): Observable<Servicio> {
+    return this.http.post<Servicio>(this.apiURL + '/servicios', JSON.stringify(servicio), this.httpOptions)
     .pipe(
       retry(1),
       catchError(this.handleError)
     )
   }  
 
-  // HttpClient API put() method => Update empresa
-  updateEmpresa(id, empresa): Observable<Empresa> {
-    return this.http.put<Empresa>(this.apiURL + '/empresa/' + id, JSON.stringify(empresa), this.httpOptions)
+  // HttpClient API put() method => Update servicio
+  updateServicio(id, servicio): Observable<Servicio> {
+    return this.http.put<Servicio>(this.apiURL + '/servicio/' + id, JSON.stringify(servicio), this.httpOptions)
     .pipe(
       retry(1),
       catchError(this.handleError)
     )
   }
 
-  // HttpClient API delete() method => Delete empresa
-  deleteEmpresa(id){
-    return this.http.delete<Empresa>(this.apiURL + '/empresas/' + id, this.httpOptions)
+  // HttpClient API delete() method => Delete servicio
+  deleteServicio(id){
+    return this.http.delete<Servicio>(this.apiURL + '/servicios/' + id, this.httpOptions)
     .pipe(
       retry(1),
       catchError(this.handleError)
