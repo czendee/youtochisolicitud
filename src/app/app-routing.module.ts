@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ServicioCreateComponent } from './servicio-create/servicio-create.component';
-import { ServicioEditComponent } from './servicio-edit/servicio-edit.component';
-import { ServiciosListComponent } from './servicios-list/servicios-list.component';
+import { SolicitudCreateComponent } from './solicitud-create/solicitud-create.component';
+import { SolicitudEditComponent } from './solicitud-edit/solicitud-edit.component';
+import { SolicitudesListComponent } from './solicitudes-list/solicitudes-list.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'create-servicio' },
-  { path: 'create-servicio', component: ServicioCreateComponent },
-  { path: 'servicios-list', component: ServiciosListComponent },
-  { path: 'servicio-edit/:id', component: ServicioEditComponent }  
+  { path: '', pathMatch: 'full', redirectTo: 'create-solicitud' },
+  { path: 'create-solicitud', component: SolicitudCreateComponent },
+  { path: 'solicitudes-list', component: SolicitudesListComponent },
+  { path: 'solicitud-edit/:id', component: SolicitudEditComponent }  
 ];
 
 @NgModule({
