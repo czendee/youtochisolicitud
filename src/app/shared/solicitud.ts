@@ -1,4 +1,4 @@
-export class Servicio {
+export class Solicitud {
    id: number;
    name: string;
    email: string;
