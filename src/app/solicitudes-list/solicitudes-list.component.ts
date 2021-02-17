@@ -28,7 +28,7 @@ export class SolicitudesListComponent implements OnInit {
   // Delete solicitud
   deleteSolicitud(id) {
     if (window.confirm('Are you sure, you want to delete?')){
-      this.restApi.deleteSolicitudo(id).subscribe(data => {
+      this.restApi.deleteSolicitud(id).subscribe(data => {
         this.loadSolicitudes()
       })
     }
