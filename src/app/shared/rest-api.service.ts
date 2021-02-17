@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Servicio } from '../shared/servicio';
+import { Solicitud } from '../shared/solicitud';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 
@@ -26,45 +26,45 @@ export class RestApiService {
     })
   }  
 
-  // HttpClient API get() method => Fetch servicios list
-  getServicios(): Observable<Servicio> {
-    return this.http.get<Servicio>(this.apiURL + '/servicios')
+  // HttpClient API get() method => Fetch solicitudes list
+  getSolicitudes(): Observable<Solicitud> {
+    return this.http.get<Solicitud>(this.apiURL + '/solicitudes')
     .pipe(
       retry(1),
       catchError(this.handleError)
     )
   }
 
-  // HttpClient API get() method => Fetch servicio
-  getServicio(id): Observable<Servicio> {
-    return this.http.get<Servicio>(this.apiURL + '/servicios/' + id)
+  // HttpClient API get() method => Fetch solicitud
+  getSolicitud(id): Observable<Solicitud> {
+    return this.http.get<Solicitud>(this.apiURL + '/solicitudes/' + id)
     .pipe(
       retry(1),
       catchError(this.handleError)
     )
   }  
 
-  // HttpClient API post() method => Create servicio
-  createServicio(servicio): Observable<Servicio> {
-    return this.http.post<Servicio>(this.apiURL + '/servicios', JSON.stringify(servicio), this.httpOptions)
+  // HttpClient API post() method => Create solicitud
+  createSolicitud(solicitud): Observable<Solicitud> {
+    return this.http.post<Solicitud>(this.apiURL + '/solicitudes', JSON.stringify(solicitud), this.httpOptions)
     .pipe(
       retry(1),
       catchError(this.handleError)
     )
   }  
 
-  // HttpClient API put() method => Update servicio
-  updateServicio(id, servicio): Observable<Servicio> {
-    return this.http.put<Servicio>(this.apiURL + '/servicio/' + id, JSON.stringify(servicio), this.httpOptions)
+  // HttpClient API put() method => Update solicitud
+  updateSolicitud(id, solicitud): Observable<Solicitud> {
+    return this.http.put<Solicitud>(this.apiURL + '/solicitud/' + id, JSON.stringify(solicitud), this.httpOptions)
     .pipe(
       retry(1),
       catchError(this.handleError)
     )
   }
 
-  // HttpClient API delete() method => Delete servicio
-  deleteServicio(id){
-    return this.http.delete<Servicio>(this.apiURL + '/servicios/' + id, this.httpOptions)
+  // HttpClient API delete() method => Delete solicitud
+  deleteSolicitud(id){
+    return this.http.delete<Solicitud>(this.apiURL + '/solicitudes/' + id, this.httpOptions)
     .pipe(
       retry(1),
       catchError(this.handleError)
