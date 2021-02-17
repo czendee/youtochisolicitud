@@ -12,16 +12,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 
 // Components
-import { ServicioCreateComponent } from './servicio-create/servicio-create.component';
-import { ServicioEditComponent } from './servicio-edit/servicio-edit.component';
-import { ServiciosListComponent } from './servicios-list/servicios-list.component';
+import { SolicitudCreateComponent } from './solicitud-create/solicitud-create.component';
+import { SolicitudEditComponent } from './solicitud-edit/solicitud-edit.component';
+import { SolicitudesListComponent } from './solicitudes-list/solicitudes-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ServicioCreateComponent,
-    ServicioEditComponent,
-    ServiciosListComponent
+    SolicitudCreateComponent,
+    SolicitudEditComponent,
+    SolicitudesListComponent
   ],
   imports: [
     BrowserModule,
