@@ -5,7 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-solicitud-details',
   templateUrl: './solicitud-edit.component.html',
-  styleUrls: ['./servicio-edit.component.css']
+  styleUrls: ['./solicitud-edit.component.css']
 })
 
 export class SolicitudEditComponent implements OnInit {
