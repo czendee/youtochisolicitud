@@ -3,12 +3,12 @@ import { RestApiService } from "../shared/rest-api.service";
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-servicio-details',
-  templateUrl: './servicio-edit.component.html',
+  selector: 'app-solicitud-details',
+  templateUrl: './solicitud-edit.component.html',
   styleUrls: ['./servicio-edit.component.css']
 })
 
-export class ServicioEditComponent implements OnInit {
+export class SolicitudEditComponent implements OnInit {
   id = this.actRoute.snapshot.params['id'];
   servicioData: any = {};
 
@@ -20,16 +20,16 @@ export class ServicioEditComponent implements OnInit {
   }
 
   ngOnInit() { 
-    this.restApi.getServicio(this.id).subscribe((data: {}) => {
-      this.servicioData = data;
+    this.restApi.getSolicitud(this.id).subscribe((data: {}) => {
+      this.solicitudData = data;
     })
   }
 
-  // Updates servicio data
-  updateServicio() {
+  // Updates solicitud data
+  updateSolicitud() {
     if(window.confirm('Confirmar la modificacion de los datos?')){
-      this.restApi.updateServicio(this.id, this.servicioData).subscribe(data => {
-        this.router.navigate(['/servicios-list'])
+      this.restApi.updateSolicitud(this.id, this.solicitudData).subscribe(data => {
+        this.router.navigate(['/solicitudes-list'])
       })
     }
   }
