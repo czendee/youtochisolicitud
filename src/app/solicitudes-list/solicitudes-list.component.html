@@ -1,0 +1,41 @@
+<div class="container custom-container-2">
+
+  <!-- Show it when there is no solicitudes -->
+  <div class="no-data text-center" *ngIf="Servicio.length == 0">
+    <p>Aun no hay ninguna solicitud activo!</p>
+    <button class="btn btn-outline-primary" routerLink="/create-servicio">Agregar Nueva Solicitud</button>
+  </div>
+
+  <!-- Solicitud list table, it hides when there is no solicitud -->
+  <div *ngIf="Solicitud.length !== 0">
+    <h3 class="mb-3 text-center">Lista de Solicitudes</h3>
+
+    <div class="col-md-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Solicitud Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let solicitud of Solicitud">
+            <td>{{solicitud.id}}</td>
+            <td>{{solicitud.name}}</td>
+            <td>{{solicitud.email}}</td>
+            <td>{{solicitud.phone}}</td>
+            <td>
+              <span class="edit" routerLink="/solicitud-edit/{{solicitud.id}}">Edit</span>
+              <span class="delete" (click)="deleteSolicitud(solicitud.id)">Delete</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</div>
