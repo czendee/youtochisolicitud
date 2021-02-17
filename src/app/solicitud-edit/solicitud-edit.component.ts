@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 export class SolicitudEditComponent implements OnInit {
   id = this.actRoute.snapshot.params['id'];
-  servicioData: any = {};
+  solicitudData: any = {};
 
   constructor(
     public restApi: RestApiService,
